@@ -10,11 +10,11 @@ using HurricaneVR.Framework.Core;
 public class ProjectileBehavior : MonoBehaviour
 {
     public EntitySpawner Spawner;
+    public HVRGrabbable GrabScript;
 
 
     private void OnTriggerEnter(Collider other)
     {
-
-        HVRGrabbable.;
+        GrabScript.Collided.AddListener();
     }
 }
