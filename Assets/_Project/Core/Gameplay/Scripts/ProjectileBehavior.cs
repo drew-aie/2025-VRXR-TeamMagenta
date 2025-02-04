@@ -13,8 +13,4 @@ public class ProjectileBehavior : MonoBehaviour
     public HVRGrabbable GrabScript;
 
 
-    private void OnTriggerEnter(Collider other)
-    {
-        GrabScript.Collided.AddListener();
-    }
 }
