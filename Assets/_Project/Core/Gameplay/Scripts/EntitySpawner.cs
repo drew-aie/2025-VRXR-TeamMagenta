@@ -11,6 +11,10 @@ public class EntitySpawner : MonoBehaviour
     private GameObject _lastSpawned;
     private Quaternion _spawnRotation;
 
+    [SerializeField]
+    private AnimationClip _enragedClip;
+    [SerializeField]
+    private AnimationClip _satisfiedClip;
     [HideInInspector]
     public List<GameObject> SpawnedObjects;
     [HideInInspector]
@@ -63,17 +67,40 @@ public class EntitySpawner : MonoBehaviour
         return _lastSpawned;
     }
 
-    public bool DespawnOwnedEntity(GameObject obj)
+    public bool DespawnEnragedEntity(GameObject obj)
     {
         if (SpawnedObjects.Contains(obj))
         {
-            SpawnedObjects.Remove(obj);
-            obj.SetActive(false);
-            DespawnedObjects.Add(obj);
-
+            obj.GetComponent<DistanceAnimatorController>().ChangeState(DistanceAnimatorController.MoodState.Enraged);
+            //adds to despawn list after
+            StartCoroutine(Despawn(obj, _enragedClip.length));
             return true;
         }
         else return false;
+    }
+
+    public bool DespawnSatisfiedEntity(GameObject obj)
+    {
+        if (SpawnedObjects.Contains(obj))
+        {
+            obj.GetComponent<DistanceAnimatorController>().ChangeState(DistanceAnimatorController.MoodState.Satisfied);
+            //adds to despawn list after
+            StartCoroutine(Despawn(obj, _satisfiedClip.length));
+            return true;
+        }
+        else return false;
+    }
+
+    private IEnumerator Despawn(GameObject obj, float clipLength)
+    {
+        yield return new WaitForSeconds(clipLength);
+
+        obj.gameObject.transform.position = transform.position;
+
+        SpawnedObjects.Remove(obj);
+
+        obj.SetActive(false);
+        DespawnedObjects.Add(obj);
     }
 
     public void DespawnAllEntities()
@@ -81,7 +108,7 @@ public class EntitySpawner : MonoBehaviour
         for(int i = 0; i < SpawnedObjects.Count; i++)
         {
             GameObject obj = SpawnedObjects[i];
-            DespawnOwnedEntity(obj);
+            DespawnEnragedEntity(obj);
         }
 
         DespawnedObjects.RemoveRange(0, DespawnedObjects.Count - 1);

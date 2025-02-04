@@ -26,8 +26,6 @@ public class GameRoundSystem : MonoBehaviour
     private int _totalRoundSpawnCount = 0;
 
     private int _currentRoundCount;
-    public UnityEvent OnEntitySpawn;
-    public UnityEvent OnEntityDespawn;
     public UnityEvent OnRoundStart;
     public UnityEvent OnRoundEnd;
     public UnityEvent GameEnd;
@@ -64,7 +62,6 @@ public class GameRoundSystem : MonoBehaviour
           _currentEntitiesActive++;
 
           _secondsSinceLastSpawn = 0;
-          OnEntitySpawn.Invoke();
        }
     }
 
@@ -86,11 +83,11 @@ public class GameRoundSystem : MonoBehaviour
         return _spawner.Spawn();
     }
 
-    public bool DespawnEntity(GameObject obj)
+    public bool DespawnEnragedEntity(GameObject obj)
     {
-        _spawner.DespawnOwnedEntity(obj);
+        //waits until animation clip is complete.
+        _spawner.DespawnEnragedEntity(obj);
         
-        OnEntityDespawn.Invoke();
         return true;
     }
 }
