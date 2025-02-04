@@ -28,13 +28,14 @@ public class GameRoundSystem : MonoBehaviour
     private int _currentRoundCount;
     public UnityEvent OnRoundStart;
     public UnityEvent OnRoundEnd;
-    public UnityEvent GameEnd;
+    public UnityEvent OnGameEnd;
+    public UnityEvent OnGameRestart;
 
     private void FixedUpdate()
     {
         if(_currentRoundCount > _maxRoundCount)
         {
-          GameEnd.Invoke();
+          OnGameEnd.Invoke();
         }
        _secondsSinceLastSpawn += Time.fixedDeltaTime;
 
@@ -54,8 +55,8 @@ public class GameRoundSystem : MonoBehaviour
        if(_currentEntitiesActive < _maxEntitiesActive 
        && _secondsSinceLastSpawn >= _secondsBetweenSpawns)
        {
-            //if (_spawner.TriggerCount > 0)
-            //    return; 
+            if (_spawner.TriggerCount > 0)
+                return;
             if (!SpawnEntity())
                 return;
           _totalRoundSpawnCount++;
@@ -71,6 +72,8 @@ public class GameRoundSystem : MonoBehaviour
 
         _secondsSinceLastSpawn = _secondsBetweenRounds;
         _spawner.EntitySpawnPrefab = EntitySpawnPrefab;
+
+        OnGameRestart.Invoke();
     }
 
     public void DecrementActiveEntites()
