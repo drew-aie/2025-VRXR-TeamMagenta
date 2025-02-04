@@ -7,9 +7,8 @@ public class GameRoundSystem : MonoBehaviour
 {
     [SerializeField]
     GameObject EntitySpawnPrefab;
-    public EntitySpawner _spawner;
     [SerializeField]
-    private List<LanePath> _paths;
+    private EntitySpawner _spawner;
     [SerializeField, Min(0)]
     private int _maxRoundCount = 0;
     [SerializeField, Min(0)]
@@ -24,7 +23,7 @@ public class GameRoundSystem : MonoBehaviour
     private float _secondsBetweenSpawns;
     private float _secondsSinceLastSpawn;
     private int _currentEntitiesActive;
-    private int _totalRoundSpawnCount;
+    private int _totalRoundSpawnCount = 0;
 
     private int _currentRoundCount;
     public UnityEvent OnEntitySpawn;
@@ -32,7 +31,6 @@ public class GameRoundSystem : MonoBehaviour
     public UnityEvent OnRoundStart;
     public UnityEvent OnRoundEnd;
     public UnityEvent GameEnd;
-
 
     private void FixedUpdate()
     {
@@ -42,31 +40,31 @@ public class GameRoundSystem : MonoBehaviour
         }
        _secondsSinceLastSpawn += Time.fixedDeltaTime;
 
-       //if spawned more than max
-       if(_totalRoundSpawnCount > _maxEntitiesActive)
+       //go to next wave if max has spawned
+       if(_totalRoundSpawnCount > _entitiesPerWave)
        {
           _spawner.DespawnAllEntities();
           _currentRoundCount++;
           _entitiesPerWave = (int)(_entitiesPerWave * _entityRoundMultiplier);
           OnRoundEnd.Invoke();
+          _totalRoundSpawnCount = 0;
        }
-       else if (_currentEntitiesActive == 0)
-       OnRoundStart.Invoke();
+       else if (_totalRoundSpawnCount == 0)
+            OnRoundStart.Invoke();
 
        //spawns a new customer.
        if(_currentEntitiesActive < _maxEntitiesActive 
        && _secondsSinceLastSpawn >= _secondsBetweenSpawns)
        {
-          int randomIndex = Random.Range(0, _paths.Count);
-
-          LanePath randomPath = _paths[randomIndex];
-
-          SpawnEntity().GetComponent<CustomerBehavior>().ChosenPath = randomPath;
-
-          OnEntitySpawn.Invoke();
-
-          _secondsSinceLastSpawn -= _secondsBetweenSpawns;
+            //if (_spawner.TriggerCount > 0)
+            //    return; 
+            if (!SpawnEntity())
+                return;
+          _totalRoundSpawnCount++;
           _currentEntitiesActive++;
+
+          _secondsSinceLastSpawn = 0;
+          OnEntitySpawn.Invoke();
        }
     }
 

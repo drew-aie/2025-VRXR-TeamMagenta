@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LanePath : MonoBehaviour
 {
-    public GameObject Start;
-    public GameObject End;
+    [SerializeField]
+    private GameObject _startPoint;
+    [SerializeField]
+    private GameObject _endPoint;
 
-    [SerializeField]
-    private bool _customDirection;
-    [SerializeField]
-    private Vector3 _direction;
+    [HideInInspector]
+    public Vector3 Start { get => _startPoint.transform.position; } 
+    [HideInInspector]
+    public Vector3 End { get => _endPoint.transform.position; } 
+
     public Vector3 Direction 
     {
-        get => _customDirection ? _direction : (End.transform.position - Start.transform.position).normalized;
+        get => (End - Start).normalized;
     }
 }

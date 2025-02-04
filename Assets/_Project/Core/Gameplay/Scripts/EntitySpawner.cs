@@ -1,65 +1,67 @@
+using HurricaneVR.Framework.Weapons.Bow;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EntitySpawner : MonoBehaviour
 {
     public GameObject EntitySpawnPrefab;
 
-    
-    [SerializeField]
-    private float _spawnHeight;
-
-    private int _currentRoundCount;
-
     private GameObject _lastSpawned;
     private Quaternion _spawnRotation;
 
+    [HideInInspector]
     public List<GameObject> SpawnedObjects;
+    [HideInInspector]
     public List<GameObject> DespawnedObjects;
+    [SerializeField]
+    private List<LanePath> _paths;
+    [HideInInspector]
+    public int TriggerCount;
 
     private void Awake()
     {
         SpawnedObjects = new List<GameObject>();
         DespawnedObjects = new List<GameObject>();
         _spawnRotation = transform.rotation;
-        _spawnHeight = transform.position.y;
     }
 
     public GameObject Spawn()
     {
-        if(!EntitySpawnPrefab)
+        if(EntitySpawnPrefab == null)
         {
             return null;
         }
-
-        if(DespawnedObjects.Count > 0)
+        Vector3 pos = transform.position;
+        if (DespawnedObjects != null
+            && DespawnedObjects.Count > 0)
         {
             GameObject ToSpawn = DespawnedObjects[0];
             DespawnedObjects.Remove(ToSpawn);
-
             _lastSpawned = ToSpawn;
-            ToSpawn.GetComponent<CustomerBehavior>().InitOrRefresh();
+            _lastSpawned.SetActive(true);
+
+            transform.position = pos;
+            transform.rotation = _spawnRotation;
+
+            NavMeshAgent navBehavior = _lastSpawned.GetComponent<NavMeshAgent>();
+            if (navBehavior)
+                navBehavior.enabled = true;
         }
         else
-            _lastSpawned = Instantiate(EntitySpawnPrefab);
+        {
+            _lastSpawned = Instantiate(EntitySpawnPrefab, pos, _spawnRotation);
+        }
 
-        Vector3 pos = transform.position;
-        pos.y = _spawnHeight;
-        _lastSpawned.transform.position = pos;
-        _lastSpawned.transform.rotation = _spawnRotation;
-
-        _lastSpawned.SetActive(true);
+        CustomerBehavior behavior = _lastSpawned.GetComponent<CustomerBehavior>();
+        behavior.Paths = _paths;
+        behavior.InitOrRefresh();
+        
         SpawnedObjects.Add(_lastSpawned);
 
         return _lastSpawned;
     }
-
-    public void SetEntityRotation(Quaternion Rotation)
-    {
-        _spawnRotation = Rotation;
-    }
-
 
     public bool DespawnOwnedEntity(GameObject obj)
     {
@@ -84,5 +86,17 @@ public class EntitySpawner : MonoBehaviour
 
         DespawnedObjects.RemoveRange(0, DespawnedObjects.Count - 1);
         SpawnedObjects.RemoveRange(0, SpawnedObjects.Count - 1);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Customer"))
+            TriggerCount++;
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Customer"))
+            TriggerCount--;
+        if(TriggerCount < 0)
+            TriggerCount = 0;
     }
 }
