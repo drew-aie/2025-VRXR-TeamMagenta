@@ -4,33 +4,92 @@ using UnityEngine;
 
 public class MeshHealthIndicator : MonoBehaviour
 {
-    [SerializeField, Tooltip("Displayed during player lose state")]
-    private Mesh _negativeHealth;
+    [SerializeField, Tooltip("The Container prefab when health is above 0.")]
+    private GameObject _unbroken;
+    [SerializeField, Tooltip("The Container prefab when health is below 0.")]
+    private GameObject _broken;
     [SerializeField, Tooltip("Empty Health - Last Chance")]
-    private Mesh _zeroHealth;
+    private GameObject _meshEmpty;
     [SerializeField, Tooltip("Half Health")]
-    private Mesh _oneHealth;
+    private GameObject _meshHalfway;
     [SerializeField, Tooltip("Full Health")]
-    private Mesh _twoHealth;
+    private GameObject _meshFull;
 
-    private MeshFilter _meshFilter;
+    private int _healthCount;
+
+    private void Awake()
+    {
+        _unbroken = Instantiate(_unbroken, transform);
+        _broken = Instantiate(_broken, transform);
+
+        _meshEmpty = Instantiate(_meshEmpty, transform);
+        _meshHalfway = Instantiate(_meshHalfway, transform);
+        _meshFull = Instantiate(_meshFull, transform);
+
+        Restart();
+    }
+
+    public void Restart()
+    {
+        _broken.SetActive(false);
+        _unbroken.SetActive(true);
+
+        ChangeMesh(_meshFull);
+
+        _healthCount = 3;
+    }
+
+    public void ChangeMesh(GameObject innerContainerMesh)
+    {
+        DisableMeshes();
+
+        innerContainerMesh.SetActive(true);
+    }
+
+    public void DisableMeshes()
+    {
+        _meshEmpty.SetActive(false);
+        _meshHalfway.SetActive(false);
+        _meshFull.SetActive(false);
+    }
 
     public void UpdateHealth(int num)
     {
-        switch(num)
+        _healthCount = num;
+        switch(_healthCount)
         { 
             default:
-                Debug.Log("Invalid health num");
-                Debug.Break(); break;
+                Debug.Log("Invalid health num :" + _healthCount);
+                break;
             case 0:
-                _meshFilter.mesh = _negativeHealth; break;
+                DisableMeshes();
+                _unbroken.SetActive(false);
+                _broken.SetActive(true);
+                break;
             case 1:
-                _meshFilter.mesh = _zeroHealth; break;
+                ChangeMesh(_meshEmpty); break;
             case 2:
-                _meshFilter.mesh = _oneHealth; break;
+                ChangeMesh(_meshHalfway); break;
             case 3: 
-                _meshFilter.mesh = _twoHealth; break;
+                ChangeMesh(_meshFull); break;
         }
+    }
+
+    public void IncreaseHealth()
+    {
+        _healthCount++;
+        UpdateHealth(_healthCount);
+    }
+
+    public void DecreaseHealth()
+    {
+        _healthCount--;
+        UpdateHealth(_healthCount);
+    }
+
+    public int GetHealthCount()
+    {
+        return _healthCount;
     }
 
 
