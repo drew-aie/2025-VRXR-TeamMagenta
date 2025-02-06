@@ -226,6 +226,8 @@ GameObject:
   - component: {fileID: 2009799740836884869}
   - component: {fileID: 6663616711959153738}
   - component: {fileID: 241613567933536246}
+  - component: {fileID: 4161236667962012472}
+  - component: {fileID: 8517906709800971105}
   m_Layer: 0
   m_Name: TestCharacter
   m_TagString: Customer
@@ -242,8 +244,8 @@ Transform:
   m_GameObject: {fileID: 7973444721994393112}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.247, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1.2423, z: 0.018958}
+  m_LocalScale: {x: 0.53154, y: 0.53154, z: 0.53154}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7261767276732752812}
@@ -308,11 +310,11 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.85, y: 2.04, z: 0.85}
-  m_Center: {x: 0, y: -0.01, z: 0}
+  m_Center: {x: 0, y: 0.01, z: 0}
 --- !u!195 &241613567933536246
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -323,8 +325,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.1
-  m_Speed: 10
-  m_Acceleration: 5
+  m_Speed: 2.5
+  m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -335,3 +337,36 @@ NavMeshAgent:
   m_BaseOffset: 1.2
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &4161236667962012472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973444721994393112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d455a1519ed2e4fb6e83415a596c61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &8517906709800971105
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973444721994393112}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8977643827965515124
 Transform:
@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 6367542119876704240}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.068171084, y: -0.012359162, z: -0.0037396792}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -95,6 +95,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ticket_Wheel_Mesh
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6c444648d5784b5489e8d3bd55943989,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -102,7 +107,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6c444648d5784b5489e8d3bd55943989,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8896237119456037276}
+      addedObject: {fileID: 8055530287153428990}
   m_SourcePrefab: {fileID: 100100000, guid: 6c444648d5784b5489e8d3bd55943989, type: 3}
 --- !u!4 &7475825005802798750 stripped
 Transform:
@@ -116,8 +121,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6932674003855661429}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &8896237119456037276
-BoxCollider:
+--- !u!136 &8055530287153428990
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -134,6 +139,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.29999998, y: 0.2962985, z: 0.3}
-  m_Center: {x: 0, y: 0.13713959, z: 0.000000007450581}
+  serializedVersion: 2
+  m_Radius: 0.15
+  m_Height: 0.44361043
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.10217777, z: 0}

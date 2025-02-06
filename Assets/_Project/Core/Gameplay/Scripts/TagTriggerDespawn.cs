@@ -16,14 +16,9 @@ public class TagTriggerDespawn : MonoBehaviour
         if(!_spawner) return;
         if (other.CompareTag(TagToCompare) || TagToCompare.Length < 1)
         {
-            other.gameObject.transform.position = _spawner.transform.position;
-
-            _spawner.DespawnOwnedEntity(other.gameObject);
+            //waits until animation clip is complete.
+            _spawner.DespawnEnragedEntity(other.gameObject);
             OnDespawn.Invoke();
-            Debug.Log("Despawned");
         }
-        
     }
-
-    
 }
