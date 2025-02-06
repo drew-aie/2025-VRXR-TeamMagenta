@@ -22,13 +22,12 @@ public class DistanceAnimatorController : MonoBehaviour
     private MoodState _state = MoodState.None;
     private void Awake()
     {
-        _animator = GetComponent<Animator>();
-        _path = null;
         Refresh();
     }
 
     private void Refresh()
     {
+        _animator = GetComponentInChildren<Animator>();
         _state = MoodState.Calm;
         _path = null;
     }

@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class GameRoundSystem : MonoBehaviour
 {
     [SerializeField]
-    GameObject EntitySpawnPrefab;
+    private List<GameObject> _entitySpawnPrefabs;
     [SerializeField]
     private EntitySpawner _spawner;
     [SerializeField, Min(0)]
@@ -26,6 +26,10 @@ public class GameRoundSystem : MonoBehaviour
     private int _totalRoundSpawnCount = 0;
 
     private int _currentRoundCount;
+    public int CurrentRound
+    {
+        get { return _currentRoundCount;  }
+    }
     public UnityEvent OnRoundStart;
     public UnityEvent OnRoundEnd;
     public UnityEvent OnGameEnd;
@@ -71,7 +75,7 @@ public class GameRoundSystem : MonoBehaviour
         _spawner.DespawnAllEntities();
 
         _secondsSinceLastSpawn = _secondsBetweenRounds;
-        _spawner.EntitySpawnPrefab = EntitySpawnPrefab;
+        _spawner.SetPrefabs(_entitySpawnPrefabs);
 
         OnGameRestart.Invoke();
     }
