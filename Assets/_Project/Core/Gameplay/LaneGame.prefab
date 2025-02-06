@@ -53,8 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7183bad739ba18145a0bce687a778b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EntitySpawnPrefab: {fileID: 7973444721994393112, guid: c6396c6faa8b8cb4f91fb980841d94ee,
-    type: 3}
+  _entitySpawnPrefabs: []
   _spawner: {fileID: 1114248297464471051}
   _maxRoundCount: 20
   _maxEntitiesActive: 5
@@ -783,6 +782,47 @@ PrefabInstance:
       propertyPath: _spawnSpots.Array.data[3]
       value: 
       objectReference: {fileID: 6850973838866581465}
+    - target: {fileID: 5779653539770557556, guid: 62ac2e345de1b504b88bd50573594ee6,
+        type: 3}
+      propertyPath: _entitySpawnPrefabs.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779653539770557556, guid: 62ac2e345de1b504b88bd50573594ee6,
+        type: 3}
+      propertyPath: _entitySpawnPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 3096750246650465884, guid: ae185487085e54f4fafe45d1e0bdf7c9,
+        type: 3}
+    - target: {fileID: 5779653539770557556, guid: 62ac2e345de1b504b88bd50573594ee6,
+        type: 3}
+      propertyPath: _entitySpawnPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 3401546434580429081, guid: 51ee65145c1257d4296cd90e3249e8d3,
+        type: 3}
+    - target: {fileID: 5779653539770557556, guid: 62ac2e345de1b504b88bd50573594ee6,
+        type: 3}
+      propertyPath: _entitySpawnPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 7418311646443661605, guid: f7965f5a829a15544a884fb419374124,
+        type: 3}
+    - target: {fileID: 5779653539770557556, guid: 62ac2e345de1b504b88bd50573594ee6,
+        type: 3}
+      propertyPath: _entitySpawnPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 4571728255809572209, guid: aa09ab678b2cfe04b97b13f22ac60db8,
+        type: 3}
+    - target: {fileID: 5779653539770557556, guid: 62ac2e345de1b504b88bd50573594ee6,
+        type: 3}
+      propertyPath: _entitySpawnPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 6938768375835145004, guid: 47057c85d459f1c48b3f07fd0ef0b969,
+        type: 3}
+    - target: {fileID: 5779653539770557556, guid: 62ac2e345de1b504b88bd50573594ee6,
+        type: 3}
+      propertyPath: _entitySpawnPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 8695447539265802363, guid: d6efbb517ea1d014ea63da63fc58d428,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -6,7 +6,8 @@ using UnityEngine.AI;
 
 public class EntitySpawner : MonoBehaviour
 {
-    public GameObject EntitySpawnPrefab;
+    [SerializeField]
+    private List<GameObject> _entitySpawnPrefabs;
 
     private GameObject _lastSpawned;
 
@@ -29,9 +30,14 @@ public class EntitySpawner : MonoBehaviour
         DespawnedObjects = new List<GameObject>();
     }
 
+    public void SetPrefabs(List<GameObject> prefabList)
+    {
+        _entitySpawnPrefabs = prefabList;
+    }
+
     public GameObject Spawn()
     {
-        if (EntitySpawnPrefab == null)
+        if (_entitySpawnPrefabs.Count < 1)
             return null;
 
         int randomSpawnerSpotIndex = Random.Range(0, _spawnSpots.Count);
@@ -55,7 +61,9 @@ public class EntitySpawner : MonoBehaviour
         }
         else
         {
-            _lastSpawned = Instantiate(EntitySpawnPrefab, pos, rot);
+            int randomCustomerPrefab = Random.Range(0, _entitySpawnPrefabs.Count);
+            _lastSpawned = Instantiate(_entitySpawnPrefabs[randomCustomerPrefab], pos, rot);
+            _lastSpawned.tag = "Customer";
         }
 
         CustomerBehavior behavior = _lastSpawned.GetComponent<CustomerBehavior>();

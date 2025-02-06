@@ -14,7 +14,9 @@ public class TagTriggerDespawn : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(!_spawner) return;
-        if (other.CompareTag(TagToCompare) || TagToCompare.Length < 1)
+
+        Debug.Log(TagToCompare + " " + other.tag);
+        if (other.tag == TagToCompare)
         {
             //waits until animation clip is complete.
             _spawner.DespawnEnragedEntity(other.gameObject);
