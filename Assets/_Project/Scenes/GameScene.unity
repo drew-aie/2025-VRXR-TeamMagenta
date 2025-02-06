@@ -297,6 +297,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8668134042651006166, guid: f64d11680b4f7334d8551326121c128b,
         type: 3}
+      propertyPath: _secondsBetweenSpawns
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668134042651006166, guid: f64d11680b4f7334d8551326121c128b,
+        type: 3}
       propertyPath: _entityRoundMultiplier
       value: 2.49
       objectReference: {fileID: 0}
@@ -316,17 +321,17 @@ PrefabInstance:
     - target: {fileID: 1929061217532122237, guid: e75f975f7f9983c46879a17897d177e4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.35
+      value: 2.377
       objectReference: {fileID: 0}
     - target: {fileID: 1929061217532122237, guid: e75f975f7f9983c46879a17897d177e4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.45
+      value: 0.079
       objectReference: {fileID: 0}
     - target: {fileID: 1929061217532122237, guid: e75f975f7f9983c46879a17897d177e4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.79
+      value: 3.473
       objectReference: {fileID: 0}
     - target: {fileID: 1929061217532122237, guid: e75f975f7f9983c46879a17897d177e4,
         type: 3}
