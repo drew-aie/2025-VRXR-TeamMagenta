@@ -232,6 +232,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3251105391369843543, guid: f64d11680b4f7334d8551326121c128b,
         type: 3}
+      propertyPath: TagToCompare
+      value: Customer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3251105391369843543, guid: f64d11680b4f7334d8551326121c128b,
+        type: 3}
       propertyPath: OnDespawn.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -265,10 +270,35 @@ PrefabInstance:
       propertyPath: OnDespawn.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4713574450864672886, guid: f64d11680b4f7334d8551326121c128b,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713574450864672886, guid: f64d11680b4f7334d8551326121c128b,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 4.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713574450864672886, guid: f64d11680b4f7334d8551326121c128b,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.42
+      objectReference: {fileID: 0}
     - target: {fileID: 7717359962526967486, guid: f64d11680b4f7334d8551326121c128b,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668134042651006166, guid: f64d11680b4f7334d8551326121c128b,
+        type: 3}
+      propertyPath: _entitiesPerRound
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668134042651006166, guid: f64d11680b4f7334d8551326121c128b,
+        type: 3}
+      propertyPath: _entityRoundMultiplier
+      value: 2.49
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -351,8 +381,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7384940931623714712, guid: e75f975f7f9983c46879a17897d177e4,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 607221647}
   m_SourcePrefab: {fileID: 100100000, guid: e75f975f7f9983c46879a17897d177e4, type: 3}
+--- !u!1 &607221646 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7384940931623714712, guid: e75f975f7f9983c46879a17897d177e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 607221645}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &607221647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607221646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d26030769d37544e9a9b5b80615fee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &750999899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -421,7 +473,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TipJar - Health Indicator
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6505409322718245267, guid: d09c7a83e8edd90499ee525a7554dbc8, type: 3}
+    - {fileID: 7626538853815113759, guid: d09c7a83e8edd90499ee525a7554dbc8, type: 3}
+    - {fileID: 3959111733567534544, guid: d09c7a83e8edd90499ee525a7554dbc8, type: 3}
     m_RemovedGameObjects:
     - {fileID: 1147638733142579576, guid: d09c7a83e8edd90499ee525a7554dbc8, type: 3}
     - {fileID: 1851223295884242055, guid: d09c7a83e8edd90499ee525a7554dbc8, type: 3}
