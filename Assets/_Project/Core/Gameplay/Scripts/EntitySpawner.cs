@@ -9,7 +9,6 @@ public class EntitySpawner : MonoBehaviour
     public GameObject EntitySpawnPrefab;
 
     private GameObject _lastSpawned;
-    private Quaternion _spawnRotation;
 
     [SerializeField]
     private AnimationClip _enragedClip;
@@ -20,7 +19,7 @@ public class EntitySpawner : MonoBehaviour
     [HideInInspector]
     public List<GameObject> DespawnedObjects;
     [SerializeField]
-    private List<LanePath> _paths;
+    private List<SpawnerSpot> _spawnSpots;
     [HideInInspector]
     public int TriggerCount;
 
@@ -28,16 +27,17 @@ public class EntitySpawner : MonoBehaviour
     {
         SpawnedObjects = new List<GameObject>();
         DespawnedObjects = new List<GameObject>();
-        _spawnRotation = transform.rotation;
     }
 
     public GameObject Spawn()
     {
-        if(EntitySpawnPrefab == null)
-        {
+        if (EntitySpawnPrefab == null)
             return null;
-        }
-        Vector3 pos = transform.position;
+
+        int randomSpawnerSpotIndex = Random.Range(0, _spawnSpots.Count);
+
+        Vector3 pos = _spawnSpots[randomSpawnerSpotIndex].transform.position;
+        Quaternion rot = _spawnSpots[randomSpawnerSpotIndex].transform.rotation;
         if (DespawnedObjects != null
             && DespawnedObjects.Count > 0)
         {
@@ -47,7 +47,7 @@ public class EntitySpawner : MonoBehaviour
             _lastSpawned.SetActive(true);
 
             transform.position = pos;
-            transform.rotation = _spawnRotation;
+            transform.rotation = rot;
 
             NavMeshAgent navBehavior = _lastSpawned.GetComponent<NavMeshAgent>();
             if (navBehavior)
@@ -55,11 +55,11 @@ public class EntitySpawner : MonoBehaviour
         }
         else
         {
-            _lastSpawned = Instantiate(EntitySpawnPrefab, pos, _spawnRotation);
+            _lastSpawned = Instantiate(EntitySpawnPrefab, pos, rot);
         }
 
         CustomerBehavior behavior = _lastSpawned.GetComponent<CustomerBehavior>();
-        behavior.Paths = _paths;
+        behavior.Paths = _spawnSpots[randomSpawnerSpotIndex].Paths;
         behavior.InitOrRefresh();
         
         SpawnedObjects.Add(_lastSpawned);
@@ -72,8 +72,9 @@ public class EntitySpawner : MonoBehaviour
         if (SpawnedObjects.Contains(obj))
         {
             obj.GetComponent<DistanceAnimatorController>().ChangeState(DistanceAnimatorController.MoodState.Enraged);
+            float duration = _enragedClip ? _enragedClip.length : 0;
             //adds to despawn list after
-            StartCoroutine(Despawn(obj, _enragedClip.length));
+            StartCoroutine(Despawn(obj, duration));
             return true;
         }
         else return false;
@@ -84,8 +85,9 @@ public class EntitySpawner : MonoBehaviour
         if (SpawnedObjects.Contains(obj))
         {
             obj.GetComponent<DistanceAnimatorController>().ChangeState(DistanceAnimatorController.MoodState.Satisfied);
+            float duration = _satisfiedClip ? _satisfiedClip.length : 0;
             //adds to despawn list after
-            StartCoroutine(Despawn(obj, _satisfiedClip.length));
+            StartCoroutine(Despawn(obj, duration));
             return true;
         }
         else return false;
@@ -111,8 +113,8 @@ public class EntitySpawner : MonoBehaviour
             DespawnEnragedEntity(obj);
         }
 
-        DespawnedObjects.RemoveRange(0, DespawnedObjects.Count - 1);
-        SpawnedObjects.RemoveRange(0, SpawnedObjects.Count - 1);
+        DespawnedObjects.RemoveRange(0, DespawnedObjects.Count);
+        SpawnedObjects.RemoveRange(0, SpawnedObjects.Count);
     }
     private void OnTriggerEnter(Collider other)
     {

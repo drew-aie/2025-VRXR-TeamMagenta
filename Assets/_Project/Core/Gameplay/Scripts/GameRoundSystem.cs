@@ -14,7 +14,7 @@ public class GameRoundSystem : MonoBehaviour
     [SerializeField, Min(0)]
     private int _maxEntitiesActive;
     [SerializeField, Min(1)]
-    private int _entitiesPerWave;
+    private int _entitiesPerRound;
     [SerializeField, Range(1, 3)]
     private float _entityRoundMultiplier;
     [SerializeField]
@@ -40,11 +40,11 @@ public class GameRoundSystem : MonoBehaviour
        _secondsSinceLastSpawn += Time.fixedDeltaTime;
 
        //go to next wave if max has spawned
-       if(_totalRoundSpawnCount > _entitiesPerWave)
+       if(_currentEntitiesActive < 1  && _totalRoundSpawnCount > _entitiesPerRound)
        {
           _spawner.DespawnAllEntities();
           _currentRoundCount++;
-          _entitiesPerWave = (int)(_entitiesPerWave * _entityRoundMultiplier);
+          _entitiesPerRound = (int)(_entitiesPerRound * _entityRoundMultiplier);
           OnRoundEnd.Invoke();
           _totalRoundSpawnCount = 0;
        }
