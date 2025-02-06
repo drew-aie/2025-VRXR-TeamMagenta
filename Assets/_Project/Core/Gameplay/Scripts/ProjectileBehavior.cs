@@ -10,6 +10,7 @@ using HurricaneVR.Framework.Core;
 public class ProjectileBehavior : MonoBehaviour
 {
     public EntitySpawner Spawner;
+   
 
 
     private void OnTriggerEnter(Collider other)
@@ -21,6 +22,7 @@ public class ProjectileBehavior : MonoBehaviour
         ///
         if(other.CompareTag("Customer"))
         {
+            
             Destroy(gameObject);
             Spawner.DespawnSatisfiedEntity(other.gameObject);
         }
