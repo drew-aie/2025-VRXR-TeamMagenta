@@ -6,6 +6,8 @@ using UnityEngine.AI;
 using UnityEngine.Rendering.Universal.Internal;
 
 [RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(DistanceAnimatorController))]
+[RequireComponent(typeof(Animator))]
 public class CustomerBehavior : MonoBehaviour
 {
     [SerializeField]
@@ -20,25 +22,24 @@ public class CustomerBehavior : MonoBehaviour
     [HideInInspector]
     public List<LanePath> Paths;
 
-    private Transform _origin;
+    private Vector3 _target;
     private bool _directionChanged;
     private int _pathIndex;
     private NavMeshAgent _navBehavior;
     private void Awake()
     {
        _navBehavior = GetComponent<NavMeshAgent>();
-       _origin = transform;
     }
     public void InitOrRefresh()
     {
         if (Paths == null) return;
         if(Paths.Count < 1) return;
 
-        _pathIndex = Random.Range(0, Paths.Count - 1);
+        _pathIndex = Random.Range(0, Paths.Count);
+        GetComponent<DistanceAnimatorController>().SetPath(Paths[_pathIndex]);
 
+        _target = Paths[_pathIndex].Start;
         _directionChanged = false;
-
-        transform.position = _origin.position;
     }
 
     public void FixedUpdate()
@@ -46,33 +47,18 @@ public class CustomerBehavior : MonoBehaviour
        if (Paths.Count < 1)
            return;
 
-        Vector3 target;
-        float totalDistance = (Paths[_pathIndex].Start - _origin.position).magnitude;
+       bool nearPosition = _navBehavior.remainingDistance < _navBehavior.speed + CustomerPathSnapRadius;
+       if (nearPosition && !_directionChanged)
+       {
+           _target = Paths[_pathIndex].End;
+           _directionChanged = true;
+       }
+       _navBehavior.SetDestination(_target);
 
-        bool nearPosition = _navBehavior.remainingDistance < CustomerPathSnapRadius + _navBehavior.speed;
-        bool condition = nearPosition && !_directionChanged ? true : false;
-        if (condition)
-        {
-            target = Paths[_pathIndex].End;
-            _directionChanged = true;
-        }
-        else if (!_directionChanged)
-        {
-            target = Paths[_pathIndex].Start;
-        }
-        else
-            target = Paths[_pathIndex].End;
-
-        //height
-       target.y = _navBehavior.baseOffset;
-       _navBehavior.SetDestination(target);
        Quaternion desiredRotation = Quaternion.identity;
-       Vector3 direction = Paths[_pathIndex].Direction;
-        if (_directionChanged)
-            desiredRotation.SetLookRotation(Paths[_pathIndex].Direction);
-        else
-            desiredRotation.SetLookRotation((Paths[_pathIndex].Start - _origin.position).normalized);
+       desiredRotation.SetLookRotation((_target - transform.position).normalized); 
 
+       Vector3 direction = Paths[_pathIndex].Direction;
        if (Quaternion.Dot(transform.rotation, desiredRotation) > SnapRotationAtPercentComplete)
        {
            transform.rotation = desiredRotation;
