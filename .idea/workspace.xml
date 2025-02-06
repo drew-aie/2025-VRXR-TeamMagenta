@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="af49349c-086d-496b-b46c-c8149dc0330b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Environment/BuildingPrefabs/NavMesh-GameplayRoom.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Environment/BuildingPrefabs/NavMesh-GameplayRoom.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Meshes/TipJarBroken_Mesh.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Meshes/TipJarBroken_Mesh.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/TipJarBroken_Mesh.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/GameScene/NavMesh-GameplayRoom.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/GameScene/NavMesh-GameplayRoom.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Jasper Test Scene.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Jasper Test Scene/LightingData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Jasper Test Scene/LightingData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Jasper Test Scene/Lightmap-0_comp_dir.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Jasper Test Scene/Lightmap-0_comp_dir.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Jasper Test Scene/Lightmap-0_comp_light.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Jasper Test Scene/Lightmap-0_comp_light.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Jasper Test Scene/ReflectionProbe-0.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Jasper Test Scene/ReflectionProbe-0.exr.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Core/Gameplay/TEST.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Core/Gameplay/TEST.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/TipJarBroken_Mesh.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/BuildingPrefabs/GameplayRoom.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/BuildingPrefabs/GameplayRoom.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/BuildingPrefabs/MainMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/BuildingPrefabs/MainMenu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Meshes/Curtian_Mesh.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Meshes/Curtian_Mesh.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Meshes/Diner_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Meshes/Diner_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Meshes/DoubleDoor_Mesh.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Meshes/DoubleDoor_Mesh.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Meshes/ManagerDoorBroken_Mesh.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Meshes/ManagerDoorBroken_Mesh.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Meshes/ManagerDoorDemloished_Mesh.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Meshes/ManagerDoorDemloished_Mesh.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Meshes/Pillar_Mesh.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Meshes/Pillar_Mesh.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Meshes/SingleDoor_Mesh.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Meshes/SingleDoor_Mesh.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Meshes/WallGap_Mesh.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Meshes/WallGap_Mesh.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Meshes/Wall_Mesh.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Meshes/Wall_Mesh.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Meshes/Window_Mesh.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Meshes/Window_Mesh.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/Booth.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/Booth.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/Chair.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/Chair.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/CoinBroze.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/CoinBroze.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/CoinGold.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/CoinGold.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/CoinSliver.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/CoinSliver.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/Curtian.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/Curtian.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/DoubleDoor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/DoubleDoor.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/GameplayRoom.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/GameplayRoom.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/GumballMachine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/GumballMachine.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/Light.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/Light.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/Menu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/Menu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/PaintingBig.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/PaintingBig.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/PaintingLong.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/PaintingLong.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/PaintingSmall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/PaintingSmall.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/PaintingTall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/PaintingTall.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/Pepper.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/Pepper.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/Pillar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/Pillar.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/Record.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/Record.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/RecordPlaque.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/RecordPlaque.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/Salt.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/Salt.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/SingleDoor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/SingleDoor.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/StrawHolder.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/StrawHolder.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/TableRound.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/TableRound.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/TableSquare.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/TableSquare.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/TicketWheel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/TicketWheel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/TipJar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/TipJar.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/Utensils.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/Utensils.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/Wall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/Wall.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/WallGap.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/WallGap.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/Window.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Environment/Prefabs/Window.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/Jasper Test Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Jasper Test Scene.unity" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2sgAENKDP5rtE8AIVfe4adVO0SR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "Merging justin-test"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="af49349c-086d-496b-b46c-c8149dc0330b" name="Changes" comment="" />
+      <created>1738866734598</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1738866734598</updated>
+    </task>
+    <servers />
+  </component>
+</project>
