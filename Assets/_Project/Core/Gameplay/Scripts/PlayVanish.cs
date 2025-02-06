@@ -6,6 +6,8 @@ public class PlayVanish : MonoBehaviour
 {
     private void Awake()
     {
-       GetComponent<MeshRenderer>().enabled = false;
+       MeshRenderer renderer = GetComponent<MeshRenderer>();
+       if (renderer != null)
+            GetComponent<MeshRenderer>().enabled = false;
     }
 }

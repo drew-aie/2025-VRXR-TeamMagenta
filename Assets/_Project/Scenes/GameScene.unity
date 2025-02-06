@@ -230,6 +230,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3251105391369843543, guid: f64d11680b4f7334d8551326121c128b,
+        type: 3}
+      propertyPath: OnDespawn.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3251105391369843543, guid: f64d11680b4f7334d8551326121c128b,
+        type: 3}
+      propertyPath: OnDespawn.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3251105391369843543, guid: f64d11680b4f7334d8551326121c128b,
+        type: 3}
+      propertyPath: OnDespawn.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 750999901}
+    - target: {fileID: 3251105391369843543, guid: f64d11680b4f7334d8551326121c128b,
+        type: 3}
+      propertyPath: OnDespawn.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3251105391369843543, guid: f64d11680b4f7334d8551326121c128b,
+        type: 3}
+      propertyPath: OnDespawn.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DecreaseHealth
+      objectReference: {fileID: 0}
+    - target: {fileID: 3251105391369843543, guid: f64d11680b4f7334d8551326121c128b,
+        type: 3}
+      propertyPath: OnDespawn.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MeshHealthIndicator, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3251105391369843543, guid: f64d11680b4f7334d8551326121c128b,
+        type: 3}
+      propertyPath: OnDespawn.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7717359962526967486, guid: f64d11680b4f7334d8551326121c128b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -331,17 +366,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameplayRoom
       objectReference: {fileID: 0}
-    - target: {fileID: 6468105240088744181, guid: d09c7a83e8edd90499ee525a7554dbc8,
-        type: 3}
-      propertyPath: m_NavMeshData
-      value: 
-      objectReference: {fileID: 23800000, guid: e0eab3d104fa5d743a0941a4485b3a5e,
-        type: 2}
-    - target: {fileID: 6468105240088744181, guid: d09c7a83e8edd90499ee525a7554dbc8,
-        type: 3}
-      propertyPath: m_UseGeometry
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7204242422924628536, guid: d09c7a83e8edd90499ee525a7554dbc8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -392,11 +416,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7237880362723707938, guid: d09c7a83e8edd90499ee525a7554dbc8,
+        type: 3}
+      propertyPath: m_Name
+      value: TipJar - Health Indicator
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1147638733142579576, guid: d09c7a83e8edd90499ee525a7554dbc8, type: 3}
+    - {fileID: 1851223295884242055, guid: d09c7a83e8edd90499ee525a7554dbc8, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7237880362723707938, guid: d09c7a83e8edd90499ee525a7554dbc8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 750999901}
   m_SourcePrefab: {fileID: 100100000, guid: d09c7a83e8edd90499ee525a7554dbc8, type: 3}
+--- !u!1 &750999900 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7237880362723707938, guid: d09c7a83e8edd90499ee525a7554dbc8,
+    type: 3}
+  m_PrefabInstance: {fileID: 750999899}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &750999901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750999900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 523b65cbf585175418f2ef4ce91f6645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unbroken: {fileID: 1772605124712940015, guid: 8824d34e3ef1ddd43b8154402fc79507,
+    type: 3}
+  _broken: {fileID: 1389163185238166132, guid: 196a01e8ea23eb149801e464944df670, type: 3}
+  _meshEmpty: {fileID: 5193256726581997230, guid: 2cf2f8156bf6d4540ab975501573903b,
+    type: 3}
+  _meshHalfway: {fileID: 7812285526821886382, guid: 81133de4cf2bdc047868752d62a0b443,
+    type: 3}
+  _meshFull: {fileID: 1284034580513915510, guid: a8dd68c222ff0d14da0c2e8591f4fafa,
+    type: 3}
 --- !u!1 &761620963
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,7 +756,7 @@ PrefabInstance:
     - target: {fileID: 4018361016754982195, guid: c884123088440284692e484efd2c360f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.95
+      value: 5.316
       objectReference: {fileID: 0}
     - target: {fileID: 4018361016754982195, guid: c884123088440284692e484efd2c360f,
         type: 3}
