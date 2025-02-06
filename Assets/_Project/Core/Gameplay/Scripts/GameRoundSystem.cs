@@ -14,7 +14,7 @@ public class GameRoundSystem : MonoBehaviour
     [SerializeField, Min(0)]
     private int _maxEntitiesActive;
     [SerializeField, Min(1)]
-    private int _entitiesPerWave;
+    private int _entitiesPerRound;
     [SerializeField, Range(1, 3)]
     private float _entityRoundMultiplier;
     [SerializeField]
@@ -26,26 +26,25 @@ public class GameRoundSystem : MonoBehaviour
     private int _totalRoundSpawnCount = 0;
 
     private int _currentRoundCount;
-    public UnityEvent OnEntitySpawn;
-    public UnityEvent OnEntityDespawn;
     public UnityEvent OnRoundStart;
     public UnityEvent OnRoundEnd;
-    public UnityEvent GameEnd;
+    public UnityEvent OnGameEnd;
+    public UnityEvent OnGameRestart;
 
     private void FixedUpdate()
     {
         if(_currentRoundCount > _maxRoundCount)
         {
-          GameEnd.Invoke();
+          OnGameEnd.Invoke();
         }
        _secondsSinceLastSpawn += Time.fixedDeltaTime;
 
        //go to next wave if max has spawned
-       if(_totalRoundSpawnCount > _entitiesPerWave)
+       if(_currentEntitiesActive < 1  && _totalRoundSpawnCount > _entitiesPerRound)
        {
           _spawner.DespawnAllEntities();
           _currentRoundCount++;
-          _entitiesPerWave = (int)(_entitiesPerWave * _entityRoundMultiplier);
+          _entitiesPerRound = (int)(_entitiesPerRound * _entityRoundMultiplier);
           OnRoundEnd.Invoke();
           _totalRoundSpawnCount = 0;
        }
@@ -56,15 +55,14 @@ public class GameRoundSystem : MonoBehaviour
        if(_currentEntitiesActive < _maxEntitiesActive 
        && _secondsSinceLastSpawn >= _secondsBetweenSpawns)
        {
-            //if (_spawner.TriggerCount > 0)
-            //    return; 
+            if (_spawner.TriggerCount > 0)
+                return;
             if (!SpawnEntity())
                 return;
           _totalRoundSpawnCount++;
           _currentEntitiesActive++;
 
           _secondsSinceLastSpawn = 0;
-          OnEntitySpawn.Invoke();
        }
     }
 
@@ -74,6 +72,8 @@ public class GameRoundSystem : MonoBehaviour
 
         _secondsSinceLastSpawn = _secondsBetweenRounds;
         _spawner.EntitySpawnPrefab = EntitySpawnPrefab;
+
+        OnGameRestart.Invoke();
     }
 
     public void DecrementActiveEntites()
@@ -86,11 +86,11 @@ public class GameRoundSystem : MonoBehaviour
         return _spawner.Spawn();
     }
 
-    public bool DespawnEntity(GameObject obj)
+    public bool DespawnEnragedEntity(GameObject obj)
     {
-        _spawner.DespawnOwnedEntity(obj);
+        //waits until animation clip is complete.
+        _spawner.DespawnEnragedEntity(obj);
         
-        OnEntityDespawn.Invoke();
         return true;
     }
 }
