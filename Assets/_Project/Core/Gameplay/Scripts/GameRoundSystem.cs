@@ -26,6 +26,10 @@ public class GameRoundSystem : MonoBehaviour
     private int _totalRoundSpawnCount = 0;
 
     private int _currentRoundCount;
+    public int CurrentRound
+    {
+        get { return _currentRoundCount;  }
+    }
     public UnityEvent OnRoundStart;
     public UnityEvent OnRoundEnd;
     public UnityEvent OnGameEnd;
