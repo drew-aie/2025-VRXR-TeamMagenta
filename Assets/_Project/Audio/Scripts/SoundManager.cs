@@ -15,6 +15,17 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     private List<AudioSource> _sources;
 
+    private void Awake()
+    {
+        foreach (AudioSource source in _sources)
+        {
+            if(!source.isPlaying)
+            {
+                source.Play();
+            }
+        }
+    }
+
     public void UpdateAudioVolume()
     {
         if (_sources.Count < 1)
