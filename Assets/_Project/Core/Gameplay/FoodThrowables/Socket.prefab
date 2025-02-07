@@ -66,7 +66,7 @@ MonoBehaviour:
   _grabBag: {fileID: 0}
   GrabBags: []
   GrabControl: 0
-  GrabDetectionType: 1
+  GrabDetectionType: 0
   CheckHandOverlap: 0
   ReleasesOnHover: 0
   InstantHandPose: 0
