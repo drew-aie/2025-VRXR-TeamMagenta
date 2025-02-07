@@ -785,7 +785,7 @@ PrefabInstance:
     - target: {fileID: 5234217535304374152, guid: e75f975f7f9983c46879a17897d177e4,
         type: 3}
       propertyPath: TriggersOnly
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7384940931623714712, guid: e75f975f7f9983c46879a17897d177e4,
         type: 3}
@@ -855,7 +855,12 @@ PrefabInstance:
     - target: {fileID: 7973470172749010451, guid: e75f975f7f9983c46879a17897d177e4,
         type: 3}
       propertyPath: TriggersOnly
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7973470172749010451, guid: e75f975f7f9983c46879a17897d177e4,
+        type: 3}
+      propertyPath: IncludeTriggers
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8938659606653121591, guid: e75f975f7f9983c46879a17897d177e4,
         type: 3}
