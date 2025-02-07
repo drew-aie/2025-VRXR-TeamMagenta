@@ -780,7 +780,7 @@ PrefabInstance:
     - target: {fileID: 5115025752093556631, guid: e75f975f7f9983c46879a17897d177e4,
         type: 3}
       propertyPath: m_IsKinematic
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5234217535304374152, guid: e75f975f7f9983c46879a17897d177e4,
         type: 3}
@@ -850,7 +850,7 @@ PrefabInstance:
     - target: {fileID: 7900802454779490112, guid: e75f975f7f9983c46879a17897d177e4,
         type: 3}
       propertyPath: m_IsKinematic
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7973470172749010451, guid: e75f975f7f9983c46879a17897d177e4,
         type: 3}
