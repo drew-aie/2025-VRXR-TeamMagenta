@@ -11,7 +11,6 @@ public class ThrowableTimer : MonoBehaviour
 
     private Coroutine _coroutine;
 
-
     private void OnEnable()
     {
         if (TryGetComponent(out HVRGrabbable grabbable))
