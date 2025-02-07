@@ -695,7 +695,7 @@ PrefabInstance:
     - target: {fileID: 1929061217532122237, guid: e75f975f7f9983c46879a17897d177e4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.079
+      value: -0.283
       objectReference: {fileID: 0}
     - target: {fileID: 1929061217532122237, guid: e75f975f7f9983c46879a17897d177e4,
         type: 3}
@@ -742,6 +742,11 @@ PrefabInstance:
       propertyPath: RaycastLayermask.m_Bits
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3703852991380335725, guid: e75f975f7f9983c46879a17897d177e4,
+        type: 3}
+      propertyPath: OverrideCOM
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4175076868502143005, guid: e75f975f7f9983c46879a17897d177e4,
         type: 3}
       propertyPath: m_Enabled
@@ -750,6 +755,11 @@ PrefabInstance:
     - target: {fileID: 4175076868502143005, guid: e75f975f7f9983c46879a17897d177e4,
         type: 3}
       propertyPath: RequireUserPresence
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234217535304374152, guid: e75f975f7f9983c46879a17897d177e4,
+        type: 3}
+      propertyPath: TriggersOnly
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7384940931623714712, guid: e75f975f7f9983c46879a17897d177e4,
@@ -810,6 +820,11 @@ PrefabInstance:
     - target: {fileID: 7421065171297005028, guid: e75f975f7f9983c46879a17897d177e4,
         type: 3}
       propertyPath: HeadCollisionPushesBack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7973470172749010451, guid: e75f975f7f9983c46879a17897d177e4,
+        type: 3}
+      propertyPath: TriggersOnly
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8938659606653121591, guid: e75f975f7f9983c46879a17897d177e4,
