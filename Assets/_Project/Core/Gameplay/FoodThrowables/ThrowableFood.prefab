@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ebc937e678155e4d86feeb9248cca97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GrabBehaviour: 0
+  GrabBehaviour: 1
   PoseType: 0
   TrackingType: 0
   HoldType: 1
@@ -455,6 +455,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mesh
       objectReference: {fileID: 0}
+    - target: {fileID: 8170437782271092010, guid: b6c9953175325d143b4e75e0c039bdaf,
+        type: 3}
+      propertyPath: ParentGrabbable
+      value: 
+      objectReference: {fileID: 7918818600642493540}
     m_RemovedComponents:
     - {fileID: 2527578573451734170, guid: b6c9953175325d143b4e75e0c039bdaf, type: 3}
     m_RemovedGameObjects: []

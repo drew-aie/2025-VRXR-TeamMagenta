@@ -17,17 +17,8 @@ public class ChildSwapper : MonoBehaviour
         meshFilter.mesh = _childrenPrefabs[randomNum].GetComponentInChildren<MeshFilter>().sharedMesh;
         meshRenderer.material = _childrenPrefabs[randomNum].GetComponentInChildren<MeshRenderer>().sharedMaterial;
 
-        HVRGrabbable ownerComponent;
-        HVRGrabbableChild childComponent = meshRenderer.gameObject.GetComponent<HVRGrabbableChild>();
-        if(childComponent)
-        {
-            ownerComponent = GetComponent<HVRGrabbable>();
-            if (ownerComponent)
-            {
-                childComponent.ParentGrabbable = ownerComponent;
-                childComponent.gameObject.transform.localScale = transform.localScale;
-            }
-        }
+        GameObject child = meshRenderer.gameObject;
 
+        child.transform.localScale = transform.localScale;
     }
 }
