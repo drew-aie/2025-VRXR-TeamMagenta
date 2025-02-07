@@ -11,7 +11,7 @@ public class LockMe : MonoBehaviour
         _trans = transform;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         transform.position = _trans.position;
     }
