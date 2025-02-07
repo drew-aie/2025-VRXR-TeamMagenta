@@ -73,7 +73,6 @@ public class EntitySpawner : MonoBehaviour
                 _lastSpawned.SetActive(false);
 
                 obj.GetComponent<CustomerBehavior>().Origin = _spawnPosition;
-                Debug.Log(randomSpawnerSpotIndex + " out of " + _spawnSpots.Count);
                 randomSpawnerSpotIndex = Random.Range(0, _spawnSpots.Count);
                 _spawnPosition = _spawnSpots[randomSpawnerSpotIndex].transform.position;
             }
