@@ -69,7 +69,7 @@ MonoBehaviour:
   CheckHandOverlap: 0
   ReleasesOnHover: 0
   InstantHandPose: 0
-  HoldType: 0
+  HoldType: 1
   AutoSpawnPrefab: {fileID: 8131514693024893948, guid: 705c20dd20b6dd242979e210d3f1554c,
     type: 3}
   GrabTimeout: 0
