@@ -15,11 +15,8 @@ public class ProjectileBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //get customer 
-        // check tag 
-        ///food despawn
-        ///tell customer to despawn via satisfied function
-        ///
+        //if collision with the throwable food is with a Customer...
+        //...then destroy the food and call the Customer Spawner's Despawn Satisfied method
         if(other.CompareTag("Customer"))
         {
             
