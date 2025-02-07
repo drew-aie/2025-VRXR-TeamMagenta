@@ -777,6 +777,11 @@ PrefabInstance:
       propertyPath: RequireUserPresence
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5115025752093556631, guid: e75f975f7f9983c46879a17897d177e4,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5234217535304374152, guid: e75f975f7f9983c46879a17897d177e4,
         type: 3}
       propertyPath: TriggersOnly
@@ -842,6 +847,11 @@ PrefabInstance:
       propertyPath: HeadCollisionPushesBack
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7900802454779490112, guid: e75f975f7f9983c46879a17897d177e4,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7973470172749010451, guid: e75f975f7f9983c46879a17897d177e4,
         type: 3}
       propertyPath: TriggersOnly
@@ -889,9 +899,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607221646}
   serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 9999999
+  m_Drag: 9999999
+  m_AngularDrag: 9999999
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
