@@ -176,6 +176,7 @@ GameObject:
   - component: {fileID: 7497914672969414534}
   - component: {fileID: 749860178765847363}
   - component: {fileID: 6263143559360105956}
+  - component: {fileID: 7946157600172513}
   m_Layer: 0
   m_Name: ThrowableFood
   m_TagString: Food
@@ -392,6 +393,50 @@ MonoBehaviour:
   - {fileID: 8309040982881100544, guid: 3e972f4db6be9b8429489d0e89ad4ea0, type: 3}
   - {fileID: 262211090952720983, guid: 8d8e46ade1e908540b8816ae9cad8d50, type: 3}
   - {fileID: 1699794244516024779, guid: e255da27857474c45864547c92982e22, type: 3}
+--- !u!114 &7946157600172513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8131514693024893948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96d1b667b6234620a01e126539c3f6d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LeftHandPreview: {fileID: 0}
+  RightHandPreview: {fileID: 0}
+  BodyPreview: {fileID: 0}
+  PreviewLeft: 0
+  PreviewRight: 0
+  LeftAutoPose: 0
+  RightAutoPose: 0
+  SelectionIndex: 0
+  PoseNames:
+  - Primary Not Set
+  PrimaryPose:
+    Pose: {fileID: 0}
+    Weight: 1
+    Mask: 0
+    Type: 0
+    Speed: 16
+    AnimationParameter: None
+    ButtonParameter: 0
+    Button: 0
+    Disabled: 0
+    ThumbType: 0
+    IndexType: 0
+    MiddleType: 0
+    RingType: 0
+    PinkyType: 0
+    ThumbStart: 0.75
+    IndexStart: 1
+    MiddleStart: 0
+    RingStart: 0
+    PinkyStart: 0
+  Blends: []
+  MirrorAxis: 0
 --- !u!1001 &7539963760671054203
 PrefabInstance:
   m_ObjectHideFlags: 0
