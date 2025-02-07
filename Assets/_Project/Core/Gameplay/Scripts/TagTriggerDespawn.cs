@@ -9,7 +9,7 @@ public class TagTriggerDespawn : MonoBehaviour
     public string TagToCompare;
     [SerializeField]
     private EntitySpawner _spawner;
-    public UnityEvent OnDespawn;
+    public UnityEvent OnTriggerDespawn;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,7 +19,6 @@ public class TagTriggerDespawn : MonoBehaviour
         {
             //waits until animation clip is complete.
             _spawner.DespawnEnragedEntity(other.gameObject);
-            OnDespawn.Invoke();
         }
     }
 }

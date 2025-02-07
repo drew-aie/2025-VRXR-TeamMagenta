@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Slider))]
 public class SliderValueToText : MonoBehaviour
@@ -10,11 +10,8 @@ public class SliderValueToText : MonoBehaviour
     [SerializeField]
     private TMP_Text _sliderValueText;
 
+    [SerializeField]
     private Slider _slider;
-    private void Awake()
-    {
-        _slider = GetComponent<Slider>();
-    }
 
     public void UpdateValue()
     {
