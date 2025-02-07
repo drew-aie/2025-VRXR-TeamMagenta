@@ -9,6 +9,7 @@ using HurricaneVR.Framework.Core;
 
 public class ProjectileBehavior : MonoBehaviour
 {
+    [HideInInspector]
     public EntitySpawner Spawner;
    
 

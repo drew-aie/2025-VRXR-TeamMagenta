@@ -103,6 +103,7 @@ public class EntitySpawner : MonoBehaviour
             int randomCustomerPrefab = Random.Range(0, _entitySpawnPrefabs.Count);
             _lastSpawned = Instantiate(_entitySpawnPrefabs[randomCustomerPrefab], _spawnPosition, rot);
             _lastSpawned.tag = "Customer";
+            _lastSpawned.GetComponent<CustomerBehavior>().Spawner = this;
         }
 
         CustomerBehavior behavior = _lastSpawned.GetComponent<CustomerBehavior>();
