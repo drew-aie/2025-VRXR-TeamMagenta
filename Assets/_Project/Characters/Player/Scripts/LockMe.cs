@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class LockMe : MonoBehaviour
 {
-    private Transform _trans;
+    private Transform _original;
 
     private void Start()
     {
-        _trans = transform;
+        _original = transform;
     }
 
     private void Update()
     {
-        transform.position = _trans.position;
+        transform.position = _original.position;
     }
 }
