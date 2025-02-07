@@ -19,9 +19,8 @@ public class ProjectileBehavior : MonoBehaviour
         //...then destroy the food and call the Customer Spawner's Despawn Satisfied method
         if(other.CompareTag("Customer"))
         {
-            
-            Destroy(gameObject);
             Spawner.DespawnSatisfiedEntity(other.gameObject);
+            Destroy(gameObject);
         }
     }
 
