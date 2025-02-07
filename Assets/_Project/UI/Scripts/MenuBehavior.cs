@@ -9,16 +9,7 @@ public class MenuBehavior : MonoBehaviour
     [SerializeField]
     GameRoundSystem _roundSystem;
 
-    [SerializeField]
-    HVRButton _startButton;
-
-    [SerializeField]
-    HVRButton hVRButton;
-
-    private Coroutine _coroutine;
-
-
-
+    
 
 
 
