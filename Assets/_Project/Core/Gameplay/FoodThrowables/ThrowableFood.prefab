@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GrabBehaviour: 1
-  PoseType: 0
+  PoseType: 1
   TrackingType: 0
   HoldType: 1
   GrabControl: 0
