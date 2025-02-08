@@ -344,7 +344,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &7497914672969414534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,7 +603,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.11
+  m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &4192785899924517674 stripped
 Transform:
