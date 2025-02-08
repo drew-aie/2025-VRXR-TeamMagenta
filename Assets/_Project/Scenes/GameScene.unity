@@ -260,9 +260,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1114248297464471051, guid: f64d11680b4f7334d8551326121c128b,
         type: 3}
+      propertyPath: OnDespawn.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114248297464471051, guid: f64d11680b4f7334d8551326121c128b,
+        type: 3}
       propertyPath: OnDespawn.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 920045981}
+    - target: {fileID: 1114248297464471051, guid: f64d11680b4f7334d8551326121c128b,
+        type: 3}
+      propertyPath: OnDespawn.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 750999901}
     - target: {fileID: 1114248297464471051, guid: f64d11680b4f7334d8551326121c128b,
         type: 3}
       propertyPath: OnDespawn.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -280,12 +290,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1114248297464471051, guid: f64d11680b4f7334d8551326121c128b,
         type: 3}
+      propertyPath: OnDespawn.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DecreaseHealth
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114248297464471051, guid: f64d11680b4f7334d8551326121c128b,
+        type: 3}
       propertyPath: OnDespawn.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameRoundSystem, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1114248297464471051, guid: f64d11680b4f7334d8551326121c128b,
         type: 3}
+      propertyPath: OnDespawn.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MeshHealthIndicator, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114248297464471051, guid: f64d11680b4f7334d8551326121c128b,
+        type: 3}
       propertyPath: OnDespawn.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114248297464471051, guid: f64d11680b4f7334d8551326121c128b,
+        type: 3}
+      propertyPath: OnDespawn.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1260005217289175585, guid: f64d11680b4f7334d8551326121c128b,
@@ -539,7 +564,8 @@ PrefabInstance:
       propertyPath: _secondsBetweenSceneStartAndRoundStart
       value: 0.1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3866377828431998993, guid: f64d11680b4f7334d8551326121c128b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -644,8 +670,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 523b65cbf585175418f2ef4ce91f6645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unbroken: {fileID: 1772605124712940015, guid: 8824d34e3ef1ddd43b8154402fc79507,
-    type: 3}
   _broken: {fileID: 1389163185238166132, guid: 196a01e8ea23eb149801e464944df670, type: 3}
   _meshEmpty: {fileID: 5193256726581997230, guid: 2cf2f8156bf6d4540ab975501573903b,
     type: 3}

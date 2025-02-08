@@ -19,6 +19,7 @@ public class TagTriggerDespawn : MonoBehaviour
         {
             //waits until animation clip is complete.
             _spawner.DespawnEnragedEntity(other.gameObject);
+            OnTriggerDespawn.Invoke();
         }
     }
 }
