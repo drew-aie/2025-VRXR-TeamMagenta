@@ -8,6 +8,11 @@ public class CustomSocket : MonoBehaviour
     public GameObject Product;
 
 
+    private void Awake()
+    {
+        Instantiate(Product, transform.position, transform.rotation);
+    }
+
     private void OnTriggerExit(Collider other)
     {
         if(other.GetComponent<ProjectileBehavior>())
