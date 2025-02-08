@@ -11,16 +11,17 @@ public class ProjectileBehavior : MonoBehaviour
 {
     [HideInInspector]
     public EntitySpawner Spawner;
-   
 
 
-    private void OnTriggerEnter(Collider other)
+
+    private void OnCollisionEnter(Collision collision)
     {
+        
         //if collision with the throwable food is with a Customer...
         //...then destroy the food and call the Customer Spawner's Despawn Satisfied method
-        if(other.CompareTag("Customer"))
+        if(collision.gameObject.CompareTag("Customer"))
         {
-            Spawner.DespawnSatisfiedEntity(other.gameObject);
+            Spawner.DespawnSatisfiedEntity(collision.gameObject);
             Destroy(gameObject);
         }
     }
