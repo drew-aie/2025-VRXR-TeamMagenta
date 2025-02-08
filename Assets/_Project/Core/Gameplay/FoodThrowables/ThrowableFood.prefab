@@ -240,9 +240,9 @@ MonoBehaviour:
   OneHandStrength: {fileID: 0}
   TwoHandStrength: {fileID: 0}
   PullingSettingsOverride: {fileID: 0}
-  HandGrabbedClip: {fileID: 0}
+  HandGrabbedClip: {fileID: 8300000, guid: 71da2124ae2bb8f4d80e99c92613b202, type: 3}
   SocketGrabPoints: []
-  Rigidbody: {fileID: 0}
+  Rigidbody: {fileID: 3662449869082434510}
   AutoApplyLayer: 1
   RequireOverlapClearance: 0
   OverlapTimeout: 0.1
