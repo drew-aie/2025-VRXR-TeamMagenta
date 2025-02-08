@@ -495,6 +495,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7563407662106729903, guid: b6c9953175325d143b4e75e0c039bdaf,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7666608015774876007, guid: b6c9953175325d143b4e75e0c039bdaf,
         type: 3}
       propertyPath: m_Name
@@ -598,7 +603,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.65
+  m_Radius: 0.11
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &4192785899924517674 stripped
 Transform:
