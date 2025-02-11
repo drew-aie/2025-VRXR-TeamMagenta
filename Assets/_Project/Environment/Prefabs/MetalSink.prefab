@@ -30,7 +30,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6095077022451927653}
-  - {fileID: 7527108001858169348}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5988847693606808974
@@ -148,77 +147,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.2538234, z: 0.7998722}
   m_Center: {x: -0.5, y: 0.6269117, z: 0.3999361}
---- !u!1001 &8630536880866016222
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 310844107873454895}
-    m_Modifications:
-    - target: {fileID: 2283460568300687834, guid: a6ae12ba74f6c1043a1232b84b57bbd1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2283460568300687834, guid: a6ae12ba74f6c1043a1232b84b57bbd1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2283460568300687834, guid: a6ae12ba74f6c1043a1232b84b57bbd1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2283460568300687834, guid: a6ae12ba74f6c1043a1232b84b57bbd1,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2283460568300687834, guid: a6ae12ba74f6c1043a1232b84b57bbd1,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2283460568300687834, guid: a6ae12ba74f6c1043a1232b84b57bbd1,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2283460568300687834, guid: a6ae12ba74f6c1043a1232b84b57bbd1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2283460568300687834, guid: a6ae12ba74f6c1043a1232b84b57bbd1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2283460568300687834, guid: a6ae12ba74f6c1043a1232b84b57bbd1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2283460568300687834, guid: a6ae12ba74f6c1043a1232b84b57bbd1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7594744097970938082, guid: a6ae12ba74f6c1043a1232b84b57bbd1,
-        type: 3}
-      propertyPath: m_Name
-      value: StrawHolder
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a6ae12ba74f6c1043a1232b84b57bbd1, type: 3}
---- !u!4 &7527108001858169348 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2283460568300687834, guid: a6ae12ba74f6c1043a1232b84b57bbd1,
-    type: 3}
-  m_PrefabInstance: {fileID: 8630536880866016222}
-  m_PrefabAsset: {fileID: 0}
