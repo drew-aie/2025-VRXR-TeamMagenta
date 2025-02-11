@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 6453256475529084837}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.11658789, y: -0.089478165, z: 0.044508986}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -106,7 +106,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 29d957b8183043447939426ba1cb811f,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7324015557409580123}
+      addedObject: {fileID: 7017587034074553428}
   m_SourcePrefab: {fileID: 100100000, guid: 29d957b8183043447939426ba1cb811f, type: 3}
 --- !u!1 &1384258975184211485 stripped
 GameObject:
@@ -127,8 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParentGrabbable: {fileID: 0}
---- !u!136 &7324015557409580123
-CapsuleCollider:
+--- !u!65 &7017587034074553428
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -145,10 +145,8 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.010982554
-  m_Height: 0.02095972
-  m_Direction: 1
+  serializedVersion: 3
+  m_Size: {x: 0.020890063, y: 0.02095972, z: 0.021965109}
   m_Center: {x: -9.313226e-10, y: 0.01047986, z: -0.0000000023283064}
 --- !u!4 &1764901536450745511 stripped
 Transform:
