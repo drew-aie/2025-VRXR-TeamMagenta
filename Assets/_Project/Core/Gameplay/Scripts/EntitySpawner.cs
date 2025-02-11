@@ -3,15 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Events;
 
 public class EntitySpawner : MonoBehaviour
 {
-
+    [SerializeField]
     private List<GameObject> _entitySpawnPrefabs;
 
     private GameObject _lastSpawned;
-    private Vector3 _spawnPosition;
 
     [SerializeField]
     private AnimationClip _enragedClip;
@@ -26,18 +24,10 @@ public class EntitySpawner : MonoBehaviour
     [HideInInspector]
     public int TriggerCount;
 
-    private int _lastSpawnSpotIndex = -1;
-
-    public UnityEvent OnDespawn;
-
-    bool initialized;
-
     private void Awake()
     {
         SpawnedObjects = new List<GameObject>();
         DespawnedObjects = new List<GameObject>();
-
-        initialized = false;
     }
 
     public void SetPrefabs(List<GameObject> prefabList)
@@ -47,42 +37,13 @@ public class EntitySpawner : MonoBehaviour
 
     public GameObject Spawn()
     {
-        if(_spawnSpots.Count < 1)
-            return null;
-
-        int randomSpawnerSpotIndex = 0;
-        bool freshSpawnerSpot = false;
-        while (!freshSpawnerSpot)
-        {
-            randomSpawnerSpotIndex = Random.Range(0, _spawnSpots.Count);
-            freshSpawnerSpot = randomSpawnerSpotIndex != _lastSpawnSpotIndex;
-        }
-        //only used in while loop ^
-        _lastSpawnSpotIndex = randomSpawnerSpotIndex;
-
-        _spawnPosition = _spawnSpots[randomSpawnerSpotIndex].transform.position;
-        Quaternion rot = _spawnSpots[randomSpawnerSpotIndex].transform.rotation;
-
-        if (!initialized)
-        {
-            foreach (GameObject obj in _entitySpawnPrefabs)
-            {
-                _lastSpawned = Instantiate(obj, _spawnPosition, rot);
-                _lastSpawned.tag = "Customer";
-                DespawnedObjects.Add(_lastSpawned);
-                _lastSpawned.SetActive(false);
-
-                obj.GetComponent<CustomerBehavior>().Origin = _spawnPosition;
-                randomSpawnerSpotIndex = Random.Range(0, _spawnSpots.Count);
-                _spawnPosition = _spawnSpots[randomSpawnerSpotIndex].transform.position;
-            }
-            initialized = true;
-        }
-
         if (_entitySpawnPrefabs.Count < 1)
             return null;
 
+        int randomSpawnerSpotIndex = Random.Range(0, _spawnSpots.Count);
 
+        Vector3 pos = _spawnSpots[randomSpawnerSpotIndex].transform.position;
+        Quaternion rot = _spawnSpots[randomSpawnerSpotIndex].transform.rotation;
         if (DespawnedObjects != null
             && DespawnedObjects.Count > 0)
         {
@@ -91,7 +52,7 @@ public class EntitySpawner : MonoBehaviour
             _lastSpawned = ToSpawn;
             _lastSpawned.SetActive(true);
 
-            transform.position = _spawnPosition;
+            transform.position = pos;
             transform.rotation = rot;
 
             NavMeshAgent navBehavior = _lastSpawned.GetComponent<NavMeshAgent>();
@@ -101,15 +62,13 @@ public class EntitySpawner : MonoBehaviour
         else
         {
             int randomCustomerPrefab = Random.Range(0, _entitySpawnPrefabs.Count);
-            _lastSpawned = Instantiate(_entitySpawnPrefabs[randomCustomerPrefab], _spawnPosition, rot);
+            _lastSpawned = Instantiate(_entitySpawnPrefabs[randomCustomerPrefab], pos, rot);
             _lastSpawned.tag = "Customer";
-            _lastSpawned.GetComponent<CustomerBehavior>().Spawner = this;
         }
 
         CustomerBehavior behavior = _lastSpawned.GetComponent<CustomerBehavior>();
         behavior.Paths = _spawnSpots[randomSpawnerSpotIndex].Paths;
         behavior.InitOrRefresh();
-        behavior.Origin = _spawnPosition;
         
         SpawnedObjects.Add(_lastSpawned);
 
@@ -146,16 +105,12 @@ public class EntitySpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(clipLength);
 
-        CustomerBehavior behavior = obj.GetComponent<CustomerBehavior>();
-        if (behavior)
-            obj.gameObject.transform.position = behavior.Origin;
+        obj.gameObject.transform.position = transform.position;
 
         SpawnedObjects.Remove(obj);
 
         obj.SetActive(false);
         DespawnedObjects.Add(obj);
-
-        OnDespawn.Invoke();
     }
 
     public void DespawnAllEntities()
