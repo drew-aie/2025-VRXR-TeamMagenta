@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 4995391539542709072}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.22313863, y: -0.07666059, z: 0.0712681}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -102,11 +102,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e5f9ef03934667441a38d5216f2b2f71,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4191271253516654690}
+      addedObject: {fileID: 7350958849942000462}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e5f9ef03934667441a38d5216f2b2f71,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7227780478676853733}
+      addedObject: {fileID: 4191271253516654690}
   m_SourcePrefab: {fileID: 100100000, guid: e5f9ef03934667441a38d5216f2b2f71, type: 3}
 --- !u!4 &5767488245044400075 stripped
 Transform:
@@ -120,21 +120,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6305186250817120288}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4191271253516654690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6575797157749364081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c75c5c18c01eee4ab0ab9c8cd3c3000, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ParentGrabbable: {fileID: 0}
---- !u!65 &7227780478676853733
-BoxCollider:
+--- !u!136 &7350958849942000462
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -151,6 +138,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.11928931, y: 0.09578292, z: 0.121651314}
+  serializedVersion: 2
+  m_Radius: 0.060825657
+  m_Height: 0.09578292
+  m_Direction: 1
   m_Center: {x: -0.0007633157, y: 0.0000000037252903, z: -0.005817678}
+--- !u!114 &4191271253516654690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6575797157749364081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c75c5c18c01eee4ab0ab9c8cd3c3000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ParentGrabbable: {fileID: 0}
