@@ -22,6 +22,11 @@ public class CustomerBehavior : MonoBehaviour
     [HideInInspector]
     public List<LanePath> Paths;
 
+    [HideInInspector]
+    public Vector3 Origin;
+
+    public EntitySpawner Spawner;
+
     private Vector3 _target;
     private bool _directionChanged;
     private int _pathIndex;
