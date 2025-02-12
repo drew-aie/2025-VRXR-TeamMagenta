@@ -9,19 +9,22 @@ using HurricaneVR.Framework.Core;
 
 public class ProjectileBehavior : MonoBehaviour
 {
-    [HideInInspector]
     public EntitySpawner Spawner;
 
 
 
     private void OnTriggerEnter(Collider other)
     {
-        //if collision with the throwable food is with a Customer...
-        //...then destroy the food and call the Customer Spawner's Despawn Satisfied method
+        //get customer 
+        // check tag 
+        ///food despawn
+        ///tell customer to despawn via satisfied function
+        ///
         if(other.CompareTag("Customer"))
         {
-            Spawner.DespawnSatisfiedEntity(other.gameObject);
+            
             Destroy(gameObject);
+            Spawner.DespawnSatisfiedEntity(other.gameObject);
         }
     }
 

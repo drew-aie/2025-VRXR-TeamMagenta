@@ -5,13 +5,10 @@ using UnityEngine.Events;
 
 public class GameRoundSystem : MonoBehaviour
 {
-    private static int _max = 200;
     [SerializeField]
     private List<GameObject> _entitySpawnPrefabs;
     [SerializeField]
     private EntitySpawner _spawner;
-    [SerializeField]
-    private MeshHealthIndicator _gameHealthIndicator;
     [SerializeField, Min(0)]
     private int _maxRoundCount = 0;
     [SerializeField, Min(0)]
@@ -20,145 +17,67 @@ public class GameRoundSystem : MonoBehaviour
     private int _entitiesPerRound;
     [SerializeField, Range(1, 3)]
     private float _entityRoundMultiplier;
-    [SerializeField, Tooltip("The amount of seconds before a new Health point is regenerated for the Player.")]
-    private float _secondsBeforeHealthRegen;
-    private float _secondsSinceHealthRegen;
-    [SerializeField]
-    public float _secondsBetweenSceneStartAndRoundStart;
     [SerializeField]
     public float _secondsBetweenRounds;
-    private float _secondsSinceLastRound;
     [SerializeField]
     private float _secondsBetweenSpawns;
     private float _secondsSinceLastSpawn;
     private int _currentEntitiesActive;
-    private int _currentRoundSpawnCount = 0;
+    private int _totalRoundSpawnCount = 0;
 
-    private int _currentRound;
+    private int _currentRoundCount;
     public int CurrentRound
     {
-        get { return _currentRound;  }
+        get { return _currentRoundCount;  }
     }
     public UnityEvent OnRoundStart;
     public UnityEvent OnRoundEnd;
     public UnityEvent OnGameEnd;
     public UnityEvent OnGameRestart;
 
-    private void Awake()
+    private void FixedUpdate()
     {
-        _spawner.SetPrefabs(_entitySpawnPrefabs);
-
-        _currentRound = 1;
-        _currentRoundSpawnCount = 0;
-        _secondsSinceHealthRegen = 0;
-        _currentEntitiesActive = 0;
-        //force spawn immediately
-        _secondsSinceLastSpawn = _secondsBetweenSpawns;
-        //wait period
-        _secondsSinceLastRound = _secondsBetweenRounds - _secondsBetweenSceneStartAndRoundStart;
-    }
-
-    private void Update()
-    {
-        bool zeroHealthOrOverMaxRoundCount = _currentRound > _maxRoundCount || _gameHealthIndicator.GetHealthCount() < 1;
-        if(zeroHealthOrOverMaxRoundCount)
+        if(_currentRoundCount > _maxRoundCount)
         {
           OnGameEnd.Invoke();
         }
+       _secondsSinceLastSpawn += Time.fixedDeltaTime;
 
+       //go to next wave if max has spawned
+       if(_currentEntitiesActive < 1  && _totalRoundSpawnCount > _entitiesPerRound)
+       {
+          _spawner.DespawnAllEntities();
+          _currentRoundCount++;
+          _entitiesPerRound = (int)(_entitiesPerRound * _entityRoundMultiplier);
+          OnRoundEnd.Invoke();
+          _totalRoundSpawnCount = 0;
+       }
+       else if (_totalRoundSpawnCount == 0)
+            OnRoundStart.Invoke();
 
-        bool isTimeToRegen = _secondsSinceHealthRegen > _secondsBeforeHealthRegen;
-        if (isTimeToRegen)
-        {
-            _secondsSinceHealthRegen = 0;
-            _gameHealthIndicator.IncreaseHealth();
-        }
+       //spawns a new customer.
+       if(_currentEntitiesActive < _maxEntitiesActive 
+       && _secondsSinceLastSpawn >= _secondsBetweenSpawns)
+       {
+            if (_spawner.TriggerCount > 0)
+                return;
+            if (!SpawnEntity())
+                return;
+          _totalRoundSpawnCount++;
+          _currentEntitiesActive++;
 
-        _secondsSinceHealthRegen += Time.deltaTime;
-        _secondsSinceLastSpawn += Time.deltaTime;
-        _secondsSinceLastRound += Time.deltaTime;
-
-
-        //wait for round begin
-        bool RoundHasBegun = _secondsSinceLastRound > _secondsBetweenRounds;
-        if (!RoundHasBegun)
-            return;
-        else
-        {
-            //go to next wave if max has spawned
-            bool nextRoundIfOverMax = _currentRoundSpawnCount >= _entitiesPerRound;
-            if (nextRoundIfOverMax)
-            {
-                //and no entities are currently active.
-                if (_currentEntitiesActive < 1)
-                {
-                    _spawner.DespawnAllEntities();
-                    IncrementRound();
-                    RestartRound();
-                    //scales entities per round by multiplier,
-                    //also insures there is an increase.
-                    _entitiesPerRound = Mathf.Clamp((int)(_entitiesPerRound * _entityRoundMultiplier), _entitiesPerRound + 1, _max);
-                    OnRoundEnd.Invoke();
-                    _currentRoundSpawnCount = 0;
-                }
-            }
-            else if (_currentRoundSpawnCount == 0)
-                OnRoundStart.Invoke();
-        }
-
-        bool underMaxActiveEntities = _currentEntitiesActive < _maxEntitiesActive;
-        bool maxSpawnCountIsReached = _currentRoundSpawnCount >= _entitiesPerRound;
-        bool spawnWaitPeriodActive = _secondsSinceLastSpawn < _secondsBetweenSpawns;
-
-        //spawns a new customer.
-        if (underMaxActiveEntities
-        && !maxSpawnCountIsReached
-        && !spawnWaitPeriodActive)
-        {
-             if (_spawner.TriggerCount > 0)
-                 return;
-             if (!SpawnEntity())
-                 return;
-           _currentRoundSpawnCount++;
-           _currentEntitiesActive++;
-        
-           _secondsSinceLastSpawn = 0;
-        }
-    }
-
-    public void RestartRound()
-    {
-        _spawner.DespawnAllEntities();
-
-        _secondsSinceHealthRegen = 0;
-        _secondsSinceLastSpawn = 0;
-        _secondsSinceLastRound = 0;
-        _currentEntitiesActive = 0;
-        _currentRoundSpawnCount = 0;
+          _secondsSinceLastSpawn = 0;
+       }
     }
 
     public void RestartGame()
     {
         _spawner.DespawnAllEntities();
+
+        _secondsSinceLastSpawn = _secondsBetweenRounds;
         _spawner.SetPrefabs(_entitySpawnPrefabs);
 
-        _currentRound = 1;
-        _currentRoundSpawnCount = 0;
-        _secondsSinceHealthRegen = 0;
-        _secondsSinceLastSpawn = 0;
-        _secondsSinceLastRound = _secondsBetweenRounds - _secondsBetweenSceneStartAndRoundStart;
-        _currentEntitiesActive = 0;
-
-        _gameHealthIndicator.Restart();
-
         OnGameRestart.Invoke();
-    }
-
-    public void IncrementRound()
-    {
-        _currentRound++;
-        //resets wait period before next round.
-        _secondsSinceLastRound = 0;
     }
 
     public void DecrementActiveEntites()
