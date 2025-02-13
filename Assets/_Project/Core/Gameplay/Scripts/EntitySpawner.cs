@@ -110,7 +110,7 @@ public class EntitySpawner : MonoBehaviour
         behavior.Paths = _spawnSpots[randomSpawnerSpotIndex].Paths;
         behavior.InitOrRefresh();
         behavior.Origin = _spawnPosition;
-        
+        behavior.Spawner = this;
         SpawnedObjects.Add(_lastSpawned);
 
         return _lastSpawned;

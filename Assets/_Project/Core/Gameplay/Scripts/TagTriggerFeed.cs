@@ -12,8 +12,7 @@ public class TagTriggerFeed : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!_spawner) return;
-        if (other.CompareTag(TagToCompare) || TagToCompare.Length < 1)
+        if (other.TryGetComponent(out ProjectileBehavior behavior))
         {
             //waits until animation clip is complete.
             _spawner.DespawnSatisfiedEntity(other.gameObject);

@@ -50,6 +50,16 @@ public class CustomerBehavior : MonoBehaviour
         _directionChanged = false;
     }
 
+    public void DespawnEnraged()
+    {
+        Spawner.DespawnEnragedEntity(gameObject);
+    }
+
+    public void DespawnSatisfied()
+    {
+        Spawner.DespawnSatisfiedEntity(gameObject);
+    }
+
     public void FixedUpdate()
     {
        if (Paths.Count < 1)
