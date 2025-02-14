@@ -12,7 +12,7 @@ public class TriggerCustomerDespawn : MonoBehaviour
     {
         if (other.TryGetComponent(out CustomerBehavior behavior))
         {
-            behavior.DespawnSatisfied();
+            behavior.DespawnEnraged();
             OnTriggerDespawn.Invoke();
         }
     }

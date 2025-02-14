@@ -176,8 +176,8 @@ GameObject:
   - component: {fileID: 7497914672969414534}
   - component: {fileID: 6263143559360105956}
   - component: {fileID: 7946157600172513}
-  - component: {fileID: 1927718200159859028}
   - component: {fileID: 1274262919102027237}
+  - component: {fileID: -5337766427542732382}
   m_Layer: 0
   m_Name: ThrowableFood
   m_TagString: Food
@@ -327,7 +327,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8131514693024893948}
   serializedVersion: 4
-  m_Mass: 5
+  m_Mass: 0.5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -345,7 +345,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!114 &7497914672969414534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,19 +425,6 @@ MonoBehaviour:
     PinkyStart: 0
   Blends: []
   MirrorAxis: 0
---- !u!114 &1927718200159859028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8131514693024893948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba69c3d53ec367a4f830909cca5e30e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Spawner: {fileID: 0}
 --- !u!135 &1274262919102027237
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -454,11 +441,28 @@ SphereCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.056
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-5337766427542732382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8131514693024893948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56cd0cbc7cf837349a27d52178cfbf0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TagToCompare: Customer
+  _spawner: {fileID: 0}
+  OnFed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &7539963760671054203
 PrefabInstance:
   m_ObjectHideFlags: 0
