@@ -1,20 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.Events;
 
-public class TriggerCustomerDespawn : MonoBehaviour
+public class TriggerFeed : MonoBehaviour
 {
-    public UnityEvent OnTriggerDespawn;
+    public UnityEvent OnFed;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out CustomerBehavior behavior))
         {
             //waits until animation clip is complete.
-            behavior.DespawnEnraged();
-            OnTriggerDespawn.Invoke();
+            behavior.DespawnSatisfied();
+            OnFed.Invoke();
+
+            Destroy(this);
         }
     }
 }
