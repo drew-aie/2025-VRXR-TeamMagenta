@@ -60,6 +60,15 @@ public class CustomerBehavior : MonoBehaviour
         Spawner.DespawnSatisfiedEntity(gameObject);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Food"))
+        {
+            DespawnSatisfied();
+            Destroy(other.gameObject);
+        }
+    }
+
     public void FixedUpdate()
     {
        if (Paths.Count < 1)

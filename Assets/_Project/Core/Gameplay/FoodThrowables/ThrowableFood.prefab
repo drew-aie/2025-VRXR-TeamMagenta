@@ -177,7 +177,6 @@ GameObject:
   - component: {fileID: 6263143559360105956}
   - component: {fileID: 7946157600172513}
   - component: {fileID: 1274262919102027237}
-  - component: {fileID: -5337766427542732382}
   - component: {fileID: 3894920043660355872}
   m_Layer: 0
   m_Name: ThrowableFood
@@ -459,21 +458,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.056
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-5337766427542732382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8131514693024893948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56cd0cbc7cf837349a27d52178cfbf0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnFed:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &3894920043660355872
 MonoBehaviour:
   m_ObjectHideFlags: 0
